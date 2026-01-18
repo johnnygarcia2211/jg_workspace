@@ -1,0 +1,14 @@
+[46728:82056:0117/222019.683:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[46728:82056:0117/222019.822:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[47068:79276:0117/222041.836:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-F33F134D7529D649AF93BE4813C8E1D9 will be ignored
+[46728:68880:0117/222044.981:ERROR:cast_crl.cc(443)] CRL - Verification failed.
+[46728:61524:0117/222048.889:ERROR:file_util.cc(142)] Moving extension from : C:\Users\johnn\AppData\Local\Temp\scoped_dir46728_938910212\CRX_INSTALL to : L:\projects\Vertex School\Tech Art Program\WorkSpaces\UnrealProjects\WorkSpace1\Prj1\MyProject\Saved\webcache_6613\Default\Extensions\Temp\scoped_dir46728_776921598\CRX_INSTALL failed.
+[46728:82056:0117/222048.960:WARNING:load_error_reporter.cc(72)] Extension error: Could not move extension directory into profile.
+[46728:82056:0117/223515.277:ERROR:device_event_log_impl.cc(196)] [22:35:15.254] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+[80776:71816:0117/223519.990:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+[80776:71816:0117/223520.615:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+[46728:82056:0117/223528.274:ERROR:device_event_log_impl.cc(196)] [22:35:28.230] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+[46728:82056:0117/223528.607:ERROR:device_event_log_impl.cc(196)] [22:35:28.274] USB: usb_service_win.cc:308 SetupDiEnumDeviceInterfaces: No more data is available. (0x103)
+[46728:82056:0117/223528.607:ERROR:device_event_log_impl.cc(196)] [22:35:28.340] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+[80776:71816:0117/223529.954:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+[80776:71816:0117/223539.953:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -107
