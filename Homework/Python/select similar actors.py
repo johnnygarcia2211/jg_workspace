@@ -1,0 +1,46 @@
+import unreal
+
+
+edit_subs = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+SM_edit_subs = unreal.get_editor_subsystem(unreal.StaticMeshEditorSubsystem)
+
+actors = edit_subs.get_selected_level_actors()
+sel_actor = actors[0]
+
+
+mesh_comp = sel_actor.get_components_by_class(unreal.StaticMeshComponent)[0]
+main_mesh = mesh_comp.static_mesh
+main_vertex_count = main_mesh.get_num_vertices(0)
+actor_sel_group = []
+
+main_mesh_mat = sel_actor.get_component_by_class(unreal.StaticMeshComponent)
+get_mat = main_mesh_mat.get_material(0)
+
+
+all_actors = edit_subs.get_all_level_actors()
+
+for actor in all_actors:
+    actor_comp = actor.get_components_by_class(unreal.StaticMeshComponent)
+    for comp in actor_comp:
+        actor_mesh = comp.static_mesh
+        
+        if actor_mesh:
+            vertex_count = actor_mesh.get_num_vertices(0)
+
+            if vertex_count == main_vertex_count:
+                actor_sel_group.append(actor)
+        
+
+for sel_actors in actor_sel_group:
+    sel_actor_comp = sel_actors.get_components_by_class(unreal.StaticMeshComponent)
+    for sel_actors_new_mat in sel_actor_comp:
+        sel_actors_new_mat.set_material(0, get_mat)
+
+if get_mat == sel_actors_new_mat.get_material(0):
+    print("Success!")
+
+
+
+
+
+
