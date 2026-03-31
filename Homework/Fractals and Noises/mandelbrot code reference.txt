@@ -1,0 +1,46 @@
+#bind layer out_colour!& float2
+#bind parm zoom float val = 1
+#bind parm offset float2
+#bind parm max_iterations int val = 100
+
+@KERNEL
+{
+    //pixel coordinates
+    int ix = get_global_id(0);       
+    int iy = get_global_id(1);
+    int width = get_global_size(0);
+    int height = get_global_size(1);
+
+    float2 uv = ((float2)(float)ix/width, (float)iy/height);
+
+
+    //mandelbrot logic, sets to complex plane. Real number n, imaginary number i
+    float cn = ((float)ix / width - 0.5f) * 3.5f;
+    float ci = ((float)iy / height - 0.5f) * 2.0f;
+        
+    //sets starting point to 0
+    float zn = 0.0f;
+    float zi = 0.0f;
+    int iteration = 0;
+    int limit = @max_iterations;
+    
+    //mandelbrot math escape condition
+    
+    while((zn * zn + zi *zi <= 4.0f) && (iteration < limit))
+    {
+    float next_zn = (zn * zn) - zi * zi + cn;
+    float next_zi = (2.0f * zn * zi) + ci;
+    
+    zn = next_zn;
+    zi = next_zi;
+    
+    iteration++;
+    }
+    
+    {          
+    float2 image = ((float2)(float)ix / width, (float2)(float)iy / height);
+    float2  mandelbrot = image * @zoom;
+    }
+    
+    @out_colour.set(mandelbrot);
+}

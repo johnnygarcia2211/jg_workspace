@@ -1,0 +1,64 @@
+#bind parm freq
+#bind parm seed
+
+float2 hash22(float2 p) {
+    p = (float2)(dot(p, (float2)(127.1, 311.7)),
+                dot(p, (float2)(269.5, 183.3)));
+    return -1.0f + 2.0f * fract(sin(p) * 43758.5453123f);
+}
+
+// 2D Perlin Noise Logic
+float perlin_noise(float2 p) {
+    float2 i = floor(p);
+    float2 f = fract(p);
+
+    // Quintic interpolation curve for smooth transitions
+    float2 u = f * f * f * (f * (f * 6.0f - 15.0f) + 10.0f);
+
+    return mix(mix(dot(hash22(i + (float2)(0.0f, 0.0f)), f - (float2)(0.0f, 0.0f)),
+                   dot(hash22(i + (float2)(1.0f, 0.0f)), f - (float2)(1.0f, 0.0f)), u.x),
+               mix(dot(hash22(i + (float2)(0.0f, 1.0f)), f - (float2)(0.0f, 1.0f)),
+                   dot(hash22(i + (float2)(1.0f, 1.0f)), f - (float2)(1.0f, 1.0f)), u.x), u.y);
+}
+
+@KERNEL
+{
+    // Get normalized UV coordinates from pixel indices
+    float2 uv = (float2)((float)@IX / @RESX, (float)@IY / @RESY);
+    
+    // Calculate noise based on frequency and seed
+    float n = perlin_noise(uv * @freq + (float2)(@seed));
+    
+    // Remap from -1.0/1.0 range to standard 0-1 range
+    @OUT = n * 0.5f + 0.5f;
+}
+
+
+
+---------------------
+
+
+
+
+
+
+
+//#bind data_type data name flags
+
+#bind layer colour!& float2
+#bind parm Scale!& int
+//#bind parm Contrast!& int
+#bind parm Octaves!& int
+
+
+@KERNEL
+{
+    float2 col = {1,0};
+      
+    
+    
+    
+    @colour.set(col);
+}
+
+
