@@ -1,0 +1,10 @@
+[46412:17008:0418/021035.879:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[46412:17008:0418/021036.043:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[43324:16440:0418/021045.431:WARNING:frame_impl.cc(430)] virtual CefFrameImpl::SendProcessMessage sent to detached frame 5-67B9E65E99B3D19C558D960AB8979A6D will be ignored
+[16932:46944:0418/021046.787:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -107
+[46412:46360:0418/021047.286:ERROR:cast_crl.cc(443)] CRL - Verification failed.
+[46412:46188:0418/021052.080:ERROR:file_util.cc(142)] Moving extension from : C:\Users\johnn\AppData\Local\Temp\scoped_dir46412_1942636390\CRX_INSTALL to : L:\projects\Vertex School\Tech Art Program\WorkSpaces\UnrealProjects\WorkSpace1\Prj1\MyProject\Saved\webcache_6613\Default\Extensions\Temp\scoped_dir46412_795777798\CRX_INSTALL failed.
+[46412:17008:0418/021052.346:WARNING:load_error_reporter.cc(72)] Extension error: Could not move extension directory into profile.
+[16932:46944:0418/021102.029:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -100
+[16932:46944:0418/021115.901:ERROR:ssl_client_socket_impl.cc(882)] handshake failed; returned -1, SSL error code 1, net_error -107
+[46412:17008:0418/021936.586:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
